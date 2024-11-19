@@ -1,3 +1,31 @@
+When runing in new pc 
+Check if the virtual environment is complete
+Confirm that the virtual environment is created correctly:
+
+Check if the python.exe and pip.exe files exist in the venv\Scripts directory.
+If the files are missing, you need to recreate the virtual environment.
+Delete and recreate the virtual environment:
+
+Delete the current virtual environment folder venv.
+Run the following command in the project directory to recreate the virtual environment:
+powershell
+Copy code
+python -m venv venv
+Activate the virtual environment:
+
+Windows:
+powershell
+Copy code
+.\venv\Scripts\activate
+If the problem persists, proceed to the next step.
+2. Move the project to a space-free path
+Spaces in the path may cause command execution to fail. It is recommended to move the project to a space-free directory. For example:
+
+Create a new directory:
+powershell
+Copy code
+mkdir C:\Projects
+
 How to run in local?
 Create a Virtual Environment and Install Dependencies: Run the following commands in your terminal:
 
