@@ -1,3 +1,12 @@
+Make sure we have Node.js installed before running
+Go to the Node.js official website.  https://nodejs.org/en
+
+Download the LTS (Long Term Support) version, which is suitable for most projects.
+
+During the installation:
+
+Make sure to check Add to PATH, which will automatically add Node.js to the system environment variables.
+
 When runing in new pc 
 Check if the virtual environment is complete
 Confirm that the virtual environment is created correctly:
