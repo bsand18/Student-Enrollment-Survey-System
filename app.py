@@ -24,7 +24,10 @@ if not os.path.exists(data_file):
 
 @app.route('/')
 def survey_form():
-    return render_template('survey_form.html')
+    skills = ['Coding', 'Requirements', 'Testing', 'UI Design', 'Project Management']
+    ranks = range(1, 6)
+    return render_template('survey_form.html', skills=skills, ranks=ranks)
+
 
 @app.route('/submit', methods=['POST'])
 def submit_response():
