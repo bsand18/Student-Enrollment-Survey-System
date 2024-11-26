@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.urandom(24)  
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', os.urandom(24))  
 csrf = CSRFProtect(app)
 
 data_file = './data/survey_data.xlsx'
