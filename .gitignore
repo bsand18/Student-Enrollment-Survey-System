@@ -9,3 +9,9 @@ env/
 # Project specific
 data/
 *.xlsx
+
+# Ignoring everything in the .idea folder
+.idea/*
+
+# Except the inspectionProfiles directory
+!.idea/inspectionProfiles
