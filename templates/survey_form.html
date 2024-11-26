@@ -10,10 +10,10 @@
     <div class="container mx-auto px-4 py-8 max-w-2xl bg-white rounded-lg shadow-md">
         <h1 class="text-3xl font-bold text-center mb-6">CS633 Pre-Course Survey</h1>
         <p class="text-center text-gray-600 mb-8">Please respond to questions offered below. It should take only a few minutes. In no way will it affect your grade.
-            Term Project takes a significant part of the course. It could involve some real programming. By the end of the first week, we shall identify project teams and plan each project. A team consists of five students. It is better if folks belonging to the same tem have complementary backgrounds. The goal of the term project is to simulate real-life dynamics. In order to spread the load, each team member is focusing on a certain type of deliverables. This survey will help us assemble well-balanced teams.</p>
-        <form id="surveyForm" class="space-y-6">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-            
+            Term Project takes a significant part of the course. It could involve some real programming. By the end of the first week, we shall identify project teams and plan each project. A team consists of five students. It is better if folks belonging to the same team have complementary backgrounds. The goal of the term project is to simulate real-life dynamics. In order to spread the load, each team member is focusing on a certain type of deliverables. This survey will help us assemble well-balanced teams.</p>
+        <form id="surveyForm" class="space-y-6" method="POST" action="/submit">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
             <div>
                 <label for="first_name" class="block text-sm font-medium text-gray-700">Please enter your first name:</label>
                 <input type="text" id="first_name" name="first_name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
@@ -48,11 +48,11 @@
                 <h3 class="text-lg font-medium text-gray-900 mb-4">Skills and Preferences: Please rank the following course project roles (1 = Most Desirable, 5 = Least Desirable)</h3>
                 
                 <div class="space-y-4">
-                    {% for skill in ['Coding', 'Requirements', 'Testing', 'UI Design', 'Project Management'] %}
+                    {% for skill in skills %}
                     <div>
                         <label class="block text-sm font-medium text-gray-700">{{ skill }}:</label>
                         <div class="mt-2 flex justify-between">
-                            {% for value in range(1, 6) %}
+                            {% for value in ranks %}
                             <label class="inline-flex items-center">
                                 <input type="radio" name="{{ skill.lower().replace(' ', '_') }}" value="{{ value }}" required class="form-radio text-indigo-600">
                                 <span class="ml-2">{{ value }}</span>
@@ -101,7 +101,3 @@
     </script>
 </body>
 </html>
-
-
-
-
