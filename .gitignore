@@ -1,4 +1,4 @@
-# Python specific
+# Python-specific files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -6,12 +6,15 @@ venv/
 env/
 .env
 
-# Project specific
+# Project-specific files
 data/
 *.xlsx
 
-# Ignoring everything in the .idea folder
+# Ignore everything in the .idea folder
 .idea/*
 
 # Except the inspectionProfiles directory
 !.idea/inspectionProfiles
+
+# Database file
+*.db
