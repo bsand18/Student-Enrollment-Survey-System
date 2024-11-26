@@ -16,7 +16,7 @@ csrf = CSRFProtect(app)
 DATABASE = "survey_data.db"
 
 def init_db():
-    """Initialize the SQLite database."""
+   
     with sqlite3.connect(DATABASE) as conn:
         cursor = conn.cursor()
         cursor.execute("""
@@ -42,14 +42,14 @@ init_db()
 
 @app.route('/')
 def survey_form():
-    """Render the survey form."""
+   
     skills = ['Coding', 'Requirements', 'Testing', 'UI Design', 'Project Management']
     ranks = range(1, 6)
     return render_template('survey_form.html', skills=skills, ranks=ranks)
 
 @app.route('/submit', methods=['POST'])
 def submit_response():
-    """Handle survey response submission."""
+    
     form_data = {
         'first_name': secure_filename(request.form.get('first_name')),
         'last_name': secure_filename(request.form.get('last_name')),
